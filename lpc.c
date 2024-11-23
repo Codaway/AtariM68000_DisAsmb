@@ -350,4 +350,14 @@ long *nxt;
       rinfo_ptr++;
    }
 
-   if (*rinfo_ptr ==
+   if (*rinfo_ptr == 0)
+      rinfo_next = 0x7fffffff;
+   else
+   {
+      rinfo_next += *rinfo_ptr;
+      rinfo_ptr++;
+   }
+
+   *nxt = rinfo_next;
+
+}
